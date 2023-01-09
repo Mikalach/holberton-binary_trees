@@ -1,8 +1,8 @@
 #include "binary_trees.h"
 
 /**
- * search - search in the child for existing branch
- * @test: count the number of iteration of the function
+ * searchSize - search in the child for existing branch
+ * @tree: tree to search
  * @i: counter
  */
 void searchSize(size_t *i, const binary_tree_t *tree)
