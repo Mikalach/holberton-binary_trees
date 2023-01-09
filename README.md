@@ -1,2 +1,2 @@
-# holberton-binary_trees
+# holbertonschool-binary_trees
 group project for me and Alexandre G
