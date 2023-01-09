@@ -3,15 +3,17 @@
 /**
  * search - search in the child for existing branch
  * @tree: branch to check
+ * @test: count the number of iteration of the function
  * @i: counter
  */
-void search(size_t *i, const binary_tree_t *tree)
+void search(size_t *i, const binary_tree_t *tree, size_t test)
 {
-	(*i)++;
 	if (tree->left)
-		search(i, tree->left);
-	else if (tree->right)
-		search(i, tree->right);
+		search(i, tree->left, test + 1);
+	if (tree->right)
+		search(i, tree->right, test + 1);
+	if (*i < test)
+		*i = test;
 }
 
 /**
@@ -28,6 +30,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-	search(iptr, tree);
-	return (i - 1);
+	search(iptr, tree, 0);
+	return (i);
 }
