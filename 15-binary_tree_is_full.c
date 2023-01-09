@@ -22,7 +22,6 @@ void searchForFull(int *i, const binary_tree_t *tree)
 		else
 			searchForFull(i, tree->right);
 	}
-	printf("%d", *i);
 }
 
 /**
