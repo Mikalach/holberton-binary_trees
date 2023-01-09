@@ -1,31 +1,25 @@
 #include "binary_trees.h"
 
 /**
- * searchForPerfect - search in the child for holes
- * @i: counter
- * @count: another counter
- * @tree: tree to check
+ * countElem - count how many element would be in a tree of @height height
+ * @size: size of the tree
+ * @height: height of the tree
+ * Return: 1 if logic, 0 if not
  */
-void searchForPerfect(int *i, const binary_tree_t *tree, int *count)
+int countElem(int size, int height)
 {
-	*count = *count + 1;
-	if ((*i) == 1 && tree->left)
-	{
-		if (!tree->right)
-			(*i) = 0;
-		else
-			searchForPerfect(i, tree->left, count);
-	}
+	int a = 0, b = 1;
 
-	if ((*i) == 1 && tree->right)
+	while (b <= height)
 	{
-		if (!tree->left)
-			(*i) = 0;
-		else
-			searchForPerfect(i, tree->right, count);
+		a = (a * 2) + 1;
+		b++;
+		printf("%d\n", a);
 	}
+	if (a == size)
+		return (1);
+	return (0);
 }
-
 /**
  * binary_tree_is_perfect - check the if the tree is full
  * @tree: tree we need to check if is full
@@ -34,17 +28,13 @@ void searchForPerfect(int *i, const binary_tree_t *tree, int *count)
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int i = 1;
-	int *iptr = &i;
-	int count = 0;
-	int *countptr = &count;
+	size_t size;
+	size_t height;
 
 	if (!tree)
 		return (0);
 
-	searchForPerfect(iptr, tree, countptr);
-
-	if (count != 1 && count % 2 != 0)
-		return (0);
-	return (i);
+	height = binary_tree_height(tree);
+	size = binary_tree_size(tree);
+	return (countElem((int)size, (int)height));
 }
