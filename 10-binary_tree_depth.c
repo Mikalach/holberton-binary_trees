@@ -1,12 +1,12 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_height - check the tree height
+ * binary_tree_depth - check the node depth
  * @tree: tree we need to check the height of
- * Return: height of the tree
+ * Return: depth of the tree
  */
 
-size_t binary_tree_height(const binary_tree_t *tree)
+size_t binary_tree_depth(const binary_tree_t *tree);
 {
 	size_t i;
 	binary_tree_t copyNode;
@@ -14,10 +14,9 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-
 	copyNode = tree;
 	for (i = 1 ; !copyNode ; i++)
-		copyNode = copyNode->left;
+		copyNode = copyNode->parent;
 
 	return (i);
 }
