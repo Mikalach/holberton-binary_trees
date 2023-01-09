@@ -22,7 +22,6 @@ void searchForPerfect(int *i, const binary_tree_t *tree)
 		else
 			searchForPerfect(i, tree->right);
 	}
-	printf("%d", *i);
 }
 
 /**
