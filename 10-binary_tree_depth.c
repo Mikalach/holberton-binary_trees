@@ -9,13 +9,16 @@
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
 	size_t i;
-	binary_tree_t *copyNode = (binary_tree_t *)tree;
+	binary_tree_t *copyNode;
 
 	if (!tree)
 		return (0);
 
-	for (i = 1 ; !copyNode ; i++)
+	copyNode = (binary_tree_t *)tree;
+	for (i = 0 ; copyNode != NULL ; i++)
+	{
 		copyNode = copyNode->parent;
+	}
 
-	return (i);
+	return (i - 1);
 }

@@ -8,11 +8,8 @@
 
 int binary_tree_is_root(const binary_tree_t *node)
 {
-	binary_tree_t *nodeCopy;
-
-	nodeCopy = node;
-	if (nodeCopy)
-		if (!nodeCopy->parent)
+	if (node)
+		if (!node->parent)
 			return (1);
 	return (0);
 }
