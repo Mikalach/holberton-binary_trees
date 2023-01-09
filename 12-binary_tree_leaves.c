@@ -7,9 +7,6 @@
  */
 void searchLeaf(size_t *i, const binary_tree_t *tree)
 {
-	printf("%ld\n", *i);
-	if (tree->n)
-		printf("%d\n", tree->n);
 	if (tree->left)
 		searchLeaf(i, tree->left);
 	if (tree->right)
