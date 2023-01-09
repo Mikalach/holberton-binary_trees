@@ -2,7 +2,7 @@
 
 /**
  * searchLeaf - search in the child for existing branch
- * @test: count the number of iteration of the function
+ * @tree: tree
  * @i: counter
  */
 void searchLeaf(size_t *i, const binary_tree_t *tree)
