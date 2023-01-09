@@ -8,13 +8,16 @@
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
+	/* newNode creation */
 	binary_tree_t *newNode;
 
+	/* link child -> parent */
 	newNode->n = value;
 	newNode->parent = parent;
 	newNode->left = NULL;
 	newNode->right = NULL;
 
+	/* link parent -> child */
 	if (!parent->left)
 		parent->left = newNode;
 	else
